@@ -1,0 +1,898 @@
+[
+  {
+    "id": "fortune-001",
+    "grade": "超级大吉",
+    "title": "今天你是主角",
+    "message": "先选一份喜欢的，把吃饭时间留给自己。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-002",
+    "grade": "超级大吉",
+    "title": "快乐刚刚好",
+    "message": "喜欢的味道遇上好心情，这一餐值得期待。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-003",
+    "grade": "超级大吉",
+    "title": "给日常加点光",
+    "message": "不用等特别的日子，普通一餐也可以认真过。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-004",
+    "grade": "超级大吉",
+    "title": "开场有滋有味",
+    "message": "把菜单交给小签筒，把决定留在自己手里。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-005",
+    "grade": "超级大吉",
+    "title": "这一口值得期待",
+    "message": "慢慢吃，喜欢的味道不用赶着结束。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-006",
+    "grade": "超级大吉",
+    "title": "今天也有小庆祝",
+    "message": "为已经做完的小事，给自己一个笑脸。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-007",
+    "grade": "超级大吉",
+    "title": "好好吃饭时间到",
+    "message": "暂停手里的忙碌，先把这一餐安排好。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-008",
+    "grade": "超级大吉",
+    "title": "快乐可以分享",
+    "message": "如果身边有人，问问对方今天想吃什么。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-009",
+    "grade": "超级大吉",
+    "title": "给自己一点仪式感",
+    "message": "揭晓之前有期待，吃饭的时候有陪伴。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-010",
+    "grade": "超级大吉",
+    "title": "把喜欢放在今天",
+    "message": "不用为了节日，才认真选择一顿饭。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-011",
+    "grade": "超级大吉",
+    "title": "为自己留个座位",
+    "message": "忙碌的日程里，也给吃饭留一点空间。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-012",
+    "grade": "超级大吉",
+    "title": "今天的小高光",
+    "message": "一份合意的搭配，就能让此刻更有滋味。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-013",
+    "grade": "大吉",
+    "title": "这一餐值得期待",
+    "message": "忙归忙，也给自己留点吃饭的时间。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-014",
+    "grade": "大吉",
+    "title": "小确幸开餐",
+    "message": "快乐可以很简单，比如认真吃完这一餐。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-015",
+    "grade": "大吉",
+    "title": "换个口味看看",
+    "message": "熟悉的菜单里，也许有你愿意尝试的组合。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-016",
+    "grade": "大吉",
+    "title": "经典也很动人",
+    "message": "不必每次都选新的，喜欢的味道可以再来。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-017",
+    "grade": "大吉",
+    "title": "给午间一个逗号",
+    "message": "先暂停一下，把这一餐吃得从容些。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-018",
+    "grade": "大吉",
+    "title": "把随便变成就这份",
+    "message": "选择已经有了眉目，最后由你来点头。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-019",
+    "grade": "大吉",
+    "title": "今天不必纠结",
+    "message": "先看看这份搭配，喜欢就留下。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-020",
+    "grade": "大吉",
+    "title": "给心情添点颜色",
+    "message": "好看的小舞台，配一份自己选的餐点。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-021",
+    "grade": "大吉",
+    "title": "让菜单轻松一点",
+    "message": "不需要比较所有选项，合适的一份就很好。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-022",
+    "grade": "大吉",
+    "title": "认真对待这一口",
+    "message": "放下别的页面，给眼前这一餐一点注意。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-023",
+    "grade": "大吉",
+    "title": "休息也算正事",
+    "message": "留一会儿时间坐坐，再继续手边的事情。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-024",
+    "grade": "大吉",
+    "title": "今天有点新鲜感",
+    "message": "试试不同的搭配，不合口味也可以再选。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-025",
+    "grade": "大吉",
+    "title": "喜欢就是好理由",
+    "message": "不必替口味写长篇解释，自己舒服最重要。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-026",
+    "grade": "大吉",
+    "title": "让这一餐有名字",
+    "message": "不是随便对付，是今天想吃的那一份。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-027",
+    "grade": "大吉",
+    "title": "小舞台开场了",
+    "message": "主角是你的选择，签筒只负责带来惊喜。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-028",
+    "grade": "大吉",
+    "title": "把忙碌放旁边",
+    "message": "吃饭这会儿，先让自己从待办里出来。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-029",
+    "grade": "大吉",
+    "title": "好味道慢慢来",
+    "message": "别急着赶下一件事，先享受眼前这一口。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-030",
+    "grade": "大吉",
+    "title": "有空一起吃饭",
+    "message": "想起一个人，可以约对方下次一起吃。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-031",
+    "grade": "大吉",
+    "title": "菜单里的小旅行",
+    "message": "今天换一条熟悉之外的口味路线。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-032",
+    "grade": "大吉",
+    "title": "留一点期待",
+    "message": "餐点揭晓了，接下来听听自己的胃口。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-033",
+    "grade": "大吉",
+    "title": "此刻可以轻松点",
+    "message": "一餐不用决定很多事，喜欢就够了。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-034",
+    "grade": "大吉",
+    "title": "把日常过得有味",
+    "message": "普通的今天，也配得上一顿认真选择的饭。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-035",
+    "grade": "大吉",
+    "title": "给自己一个笑脸",
+    "message": "你已经选好了方向，接下来慢慢吃。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-036",
+    "grade": "大吉",
+    "title": "合口味的一天",
+    "message": "这一餐是不是喜欢的味道，由你亲自判断。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-037",
+    "grade": "大吉",
+    "title": "下一个选择也自由",
+    "message": "喜欢可以留下，不喜欢也随时可以换。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-038",
+    "grade": "中吉",
+    "title": "刚刚好的安排",
+    "message": "不求特别复杂，选一份顺口的就好。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-039",
+    "grade": "中吉",
+    "title": "熟悉的安心感",
+    "message": "经典组合也有它让人惦记的地方。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-040",
+    "grade": "中吉",
+    "title": "按自己的节奏",
+    "message": "别被别人的用餐速度带着走。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-041",
+    "grade": "中吉",
+    "title": "先吃饭再说",
+    "message": "事情可以一件件做，这一餐也慢慢安排。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-042",
+    "grade": "中吉",
+    "title": "简单一点也很好",
+    "message": "不用凑满整张菜单，按自己的需要选。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-043",
+    "grade": "中吉",
+    "title": "给今天留点空白",
+    "message": "吃饭的时候，允许自己什么都不赶。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-044",
+    "grade": "中吉",
+    "title": "安安稳稳的一餐",
+    "message": "没有特别安排，也可以吃得认真。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-045",
+    "grade": "中吉",
+    "title": "坐下来歇一会",
+    "message": "给双脚一点休息，给自己一点时间。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-046",
+    "grade": "中吉",
+    "title": "换一种小搭配",
+    "message": "如果想微调，先看看门店允许换什么。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-047",
+    "grade": "中吉",
+    "title": "尊重自己的口味",
+    "message": "不想吃的可以跳过，不必勉强接受。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-048",
+    "grade": "中吉",
+    "title": "平常也有滋味",
+    "message": "把注意力放回眼前，日常就具体了一点。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-049",
+    "grade": "中吉",
+    "title": "今天照常照顾自己",
+    "message": "再普通的一天，也记得留出吃饭时间。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-050",
+    "grade": "中吉",
+    "title": "留给自己做决定",
+    "message": "小签给出建议，选择权一直在你手里。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-051",
+    "grade": "中吉",
+    "title": "小事慢慢办",
+    "message": "先处理眼前这一件：今天吃什么。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-052",
+    "grade": "中吉",
+    "title": "不必每次都惊艳",
+    "message": "合适、顺口，也是一份不错的选择。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-053",
+    "grade": "中吉",
+    "title": "跟着胃口走",
+    "message": "看看现在想吃多少，再确认自己的份量。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-054",
+    "grade": "中吉",
+    "title": "今天轻松开餐",
+    "message": "放下比较，先看看这份是不是合意。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-055",
+    "grade": "中吉",
+    "title": "一餐一个小停顿",
+    "message": "不用边吃边赶，偶尔慢一点也可以。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-056",
+    "grade": "中吉",
+    "title": "给日常一点变化",
+    "message": "替换一份配餐，也能试出不同的口感。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-057",
+    "grade": "中吉",
+    "title": "从容选一份",
+    "message": "没有倒计时催你，确认后再加入清单。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-058",
+    "grade": "中吉",
+    "title": "平稳地继续",
+    "message": "吃完再回到手边的事，不急着同时完成。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-059",
+    "grade": "中吉",
+    "title": "看看眼前的喜欢",
+    "message": "不追热门也没关系，自己的口味最清楚。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-060",
+    "grade": "中吉",
+    "title": "想改就改一点",
+    "message": "这一份是起点，微调后也可以很合意。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-061",
+    "grade": "中吉",
+    "title": "好好坐一会儿",
+    "message": "忙的时候，更值得给自己留个小休息。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-062",
+    "grade": "中吉",
+    "title": "普通日子的餐点",
+    "message": "无需盛大理由，也可以期待开餐。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-063",
+    "grade": "中吉",
+    "title": "吃饭不做选择题",
+    "message": "没有标准答案，选自己愿意吃的。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-064",
+    "grade": "小吉",
+    "title": "慢慢来也很好",
+    "message": "今天先照顾好自己，别的事一件件来。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-065",
+    "grade": "小吉",
+    "title": "不用急着振作",
+    "message": "先安静吃一餐，想休息的时候就歇一会。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-066",
+    "grade": "小吉",
+    "title": "小小休息站",
+    "message": "到了吃饭时间，给自己留一段不赶路的空白。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-067",
+    "grade": "小吉",
+    "title": "你可以换个选择",
+    "message": "这份不喜欢也没关系，再看看别的口味。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-068",
+    "grade": "小吉",
+    "title": "今天先不勉强",
+    "message": "不想吃的就跳过，舒服的节奏由自己定。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-069",
+    "grade": "小吉",
+    "title": "给疲惫一点座位",
+    "message": "找个位置坐下来，先陪自己吃一餐。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-070",
+    "grade": "小吉",
+    "title": "不用事事满分",
+    "message": "一顿简单合意的饭，也值得认真对待。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-071",
+    "grade": "小吉",
+    "title": "轻轻放下一会",
+    "message": "把待办暂时放旁边，吃饭时不用一直想着它。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-072",
+    "grade": "小吉",
+    "title": "小口慢慢来",
+    "message": "照着自己的速度吃，不必追上谁。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-073",
+    "grade": "小吉",
+    "title": "这里可以停一下",
+    "message": "如果今天很忙，就给自己这一餐的时间。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-074",
+    "grade": "小吉",
+    "title": "照顾自己很具体",
+    "message": "选喜欢的口味，留够吃饭的时间。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-075",
+    "grade": "小吉",
+    "title": "不着急揭晓答案",
+    "message": "今天的选择可以简单一点，喜欢就留下。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-076",
+    "grade": "小吉",
+    "title": "普通也值得陪伴",
+    "message": "不需要特别开心，才能好好坐下来吃饭。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-077",
+    "grade": "小吉",
+    "title": "让自己轻松一点",
+    "message": "如果还拿不定主意，换个口味也可以。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-078",
+    "grade": "小吉",
+    "title": "这一餐不催你",
+    "message": "不用立刻做决定，先看看完整搭配。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-079",
+    "grade": "小吉",
+    "title": "把自己放进日程",
+    "message": "别忘了给吃饭留时间，也给休息留位置。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-080",
+    "grade": "小吉",
+    "title": "温柔收个尾",
+    "message": "吃完这一餐，再慢慢安排接下来的事。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-081",
+    "grade": "超级大吉",
+    "title": "今日快乐开席",
+    "message": "这一桌不谈待办，只聊你喜欢的味道。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-082",
+    "grade": "超级大吉",
+    "title": "主角请入座",
+    "message": "今天的菜单听你的，开餐也可以有登场感。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-083",
+    "grade": "超级大吉",
+    "title": "为小事亮个灯",
+    "message": "哪怕只是准时吃上饭，也值得给自己鼓鼓掌。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-084",
+    "grade": "超级大吉",
+    "title": "快乐不用加大",
+    "message": "合胃口的份量，就能装下一次小小庆祝。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-085",
+    "grade": "超级大吉",
+    "title": "午休有自己的片头",
+    "message": "主角离开工位，镜头切到一顿期待的饭。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-086",
+    "grade": "超级大吉",
+    "title": "把这一刻装进口袋",
+    "message": "记住今天喜欢的搭配，下次纠结时就有了答案。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-087",
+    "grade": "超级大吉",
+    "title": "开心不必等周末",
+    "message": "挑个平常日子，也可以郑重地说一句：开饭啦。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-088",
+    "grade": "大吉",
+    "title": "脑内会议散会",
+    "message": "关于吃什么的讨论，今天可以提前结束。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-089",
+    "grade": "大吉",
+    "title": "给胃口投一票",
+    "message": "看过推荐以后，记得让自己的喜好发言。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-090",
+    "grade": "大吉",
+    "title": "今天麦个关子",
+    "message": "签筒负责揭晓，第一口的感想留给你。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-091",
+    "grade": "大吉",
+    "title": "独享也是聚餐",
+    "message": "和自己约好的这顿饭，也请好好赴约。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-092",
+    "grade": "大吉",
+    "title": "午间小出逃",
+    "message": "暂时离开工作频道，切到今天吃什么。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-093",
+    "grade": "大吉",
+    "title": "聊天从开饭开始",
+    "message": "一起吃饭的话，今天可以先分享一件小趣事。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-094",
+    "grade": "大吉",
+    "title": "这次不用抄作业",
+    "message": "别人点什么都好，你有自己的口味答案。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-095",
+    "grade": "大吉",
+    "title": "给饭点一张门票",
+    "message": "准许自己暂时离线，入场享受这一餐。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-096",
+    "grade": "大吉",
+    "title": "老朋友新搭档",
+    "message": "熟悉的主餐旁边，也可以试试允许替换的配餐。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-097",
+    "grade": "大吉",
+    "title": "今日安排有着落",
+    "message": "至少吃什么这一项，可以从纠结清单里划掉了。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-098",
+    "grade": "大吉",
+    "title": "给第一口留点悬念",
+    "message": "先别急着打分，尝过再决定喜不喜欢。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-099",
+    "grade": "大吉",
+    "title": "快乐无需打卡",
+    "message": "拍照也好，直接开吃也好，这一餐属于你。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-100",
+    "grade": "大吉",
+    "title": "心动可以很日常",
+    "message": "看见喜欢的搭配时，那句就吃它也很可爱。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-101",
+    "grade": "大吉",
+    "title": "给好口味留个位置",
+    "message": "这次喜欢的选择，可以成为你的下次备选。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-102",
+    "grade": "大吉",
+    "title": "饭点的小默契",
+    "message": "如果刚好抽到想吃的，就对自己点点头吧。",
+    "scene": "celebration"
+  },
+  {
+    "id": "fortune-103",
+    "grade": "中吉",
+    "title": "今日口味自己签收",
+    "message": "推荐只是送到门口，喜不喜欢还得你来确认。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-104",
+    "grade": "中吉",
+    "title": "菜单不用从头背",
+    "message": "先从眼前这一份看起，不必把所有选择记住。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-105",
+    "grade": "中吉",
+    "title": "一人份也很完整",
+    "message": "一个人吃饭，不需要把桌子摆满才算认真。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-106",
+    "grade": "中吉",
+    "title": "饭点切个频道",
+    "message": "把消息提示放一边，听听自己现在想吃什么。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-107",
+    "grade": "中吉",
+    "title": "坐哪里都能开餐",
+    "message": "店里坐坐还是打包带走，照今天的安排来。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-108",
+    "grade": "中吉",
+    "title": "不跟昨天较劲",
+    "message": "今天的胃口可以和昨天不同，不用解释。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-109",
+    "grade": "中吉",
+    "title": "再熟悉也能重选",
+    "message": "常点的搭配只是习惯，不是不能改的规定。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-110",
+    "grade": "中吉",
+    "title": "让餐桌空一点",
+    "message": "挪开手边的杂物，给这一餐腾个舒服的位置。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-111",
+    "grade": "中吉",
+    "title": "选择可以小一点",
+    "message": "先决定主餐，再慢慢看看配餐要不要换。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-112",
+    "grade": "中吉",
+    "title": "不用追上热门",
+    "message": "大家爱吃的未必是你的最爱，按口味来就好。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-113",
+    "grade": "中吉",
+    "title": "饭点不必多线程",
+    "message": "一次做一件事的时候，也可以包括好好吃饭。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-114",
+    "grade": "中吉",
+    "title": "今天走熟悉路线",
+    "message": "想吃惯常的味道，就不必为了变化而变化。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-115",
+    "grade": "中吉",
+    "title": "小小留白刚合适",
+    "message": "吃饭这会儿，不安排任务也算一种安排。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-116",
+    "grade": "中吉",
+    "title": "听一听这一口",
+    "message": "留意口感和味道，给今天的搭配一个真实评价。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-117",
+    "grade": "中吉",
+    "title": "下一餐下次再想",
+    "message": "先把眼前这顿安排好，不用一次决定一整周。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-118",
+    "grade": "中吉",
+    "title": "清单可以留余地",
+    "message": "想好需要多少再确认，不必为了凑齐而加点。",
+    "scene": "welcome"
+  },
+  {
+    "id": "fortune-119",
+    "grade": "小吉",
+    "title": "今天可以省点力",
+    "message": "不想研究菜单的时候，让小签先给一个提议。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-120",
+    "grade": "小吉",
+    "title": "不开心也能开饭",
+    "message": "不用先把心情整理好，才允许自己坐下来。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-121",
+    "grade": "小吉",
+    "title": "小签陪你坐坐",
+    "message": "不催你说话，也不催你选，安静一会儿也好。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-122",
+    "grade": "小吉",
+    "title": "今天先不营业",
+    "message": "吃饭的时候，可以暂时收起那个随时在线的自己。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-123",
+    "grade": "小吉",
+    "title": "没精神也没关系",
+    "message": "这一餐不用表现得很积极，照自己的需要来。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-124",
+    "grade": "小吉",
+    "title": "把叹气放下来",
+    "message": "如果今天有点累，先给自己找个能歇脚的位置。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-125",
+    "grade": "小吉",
+    "title": "你不欠一份满分答卷",
+    "message": "今天吃什么，选到合意就好，不需要最优解。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-126",
+    "grade": "小吉",
+    "title": "不必马上换个心情",
+    "message": "难的事情先放一会儿，这一餐只管按胃口选。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-127",
+    "grade": "小吉",
+    "title": "这一页可以慢慢翻",
+    "message": "还没想好也没关系，菜单会等你看完。",
+    "scene": "comfort"
+  },
+  {
+    "id": "fortune-128",
+    "grade": "小吉",
+    "title": "给自己留盏小灯",
+    "message": "哪怕今天没什么可庆祝，也值得被好好照顾。",
+    "scene": "comfort"
+  }
+]
