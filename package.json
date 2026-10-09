@@ -2,7 +2,7 @@
   "name": "mcd-fortune-order",
   "version": "0.1.0",
   "private": true,
-  "description": "今天麦什么 — 薯条签筒抽签选餐的响应式网页演示（M1 demo）",
+  "description": "今天麦什么 — 从门店实价到幸运餐点与应用购物车",
   "type": "module",
   "engines": {
     "node": ">=22"
@@ -11,6 +11,10 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
+    "start": "node server/index.mjs",
+    "live": "npm run build && node server/index.mjs",
+    "test:server": "node --test tests/server/*.test.mjs",
+    "test:live-ui": "node --test tests/live-e2e/workflow.test.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",

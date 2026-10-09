@@ -40,16 +40,24 @@ function quantity(value, label) {
   return value;
 }
 
-function defaultModification(modification) {
+export function defaultModification(modification) {
   if (!modification?.items) return undefined;
   const values = [];
   for (const group of modification.items) {
     for (const value of group.values ?? []) {
       const n = quantity(value.selectedQuantity ?? 0, "特调");
+      if (Number.isInteger(value.minQuantity) && n < value.minQuantity)
+        throw new Error("特调默认数量低于下限。");
+      if (Number.isInteger(value.maxQuantity) && value.maxQuantity >= 0 && n > value.maxQuantity)
+        throw new Error("特调默认数量超过上限。");
       const key = n > 0 ? value.selectedKey : value.unselectedKey;
       if (n > 0 && !key) throw new Error("特调缺少默认选项，需人工选择。");
       if (key) values.push({ code: String(value.code), key, quantity: n });
     }
+    const selected = (group.values ?? []).filter(value => (value.selectedQuantity ?? 0) > 0).length;
+    if ((Number.isInteger(group.minValues) && selected < group.minValues)
+      || (Number.isInteger(group.maxValues) && group.maxValues >= 0 && selected > group.maxValues))
+      throw new Error("特调默认选项不满足限选数量。");
   }
   return values.length ? { values } : undefined;
 }

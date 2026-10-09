@@ -81,7 +81,7 @@ export function HomePage({ store }: { store: AppStore }) {
             <div className="price-meta">{context.storeAddress}</div>
           </div>
           <p className="disabled-note">
-            演示模式使用示例门店；真实模式需在本地服务配置后显式选择。
+            {store.adapterKind === "live" ? "本次使用上海龙腾大道餐厅，抽签前会检查营业状态和当前菜单。" : "演示模式使用历史示例；真实查询请运行本机入口。"}
           </p>
         </div>
 
@@ -103,6 +103,9 @@ export function HomePage({ store }: { store: AppStore }) {
             ))}
           </div>
         </fieldset>
+        {store.adapterKind === "live" && preference.mood === "balanced" && <p className="disabled-note">
+          清爽搭配按官方营养表匹配：整份不超过650千卡、蛋白质至少15克；资料不足的餐点不参与。这是选餐条件，不是健康评级。
+        </p>}
 
         <fieldset className="field">
           <legend className="field-label">今天有什么想跳过的？</legend>
