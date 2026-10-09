@@ -47,7 +47,7 @@ export function App() {
   }} />;
   return <div className="app-shell"><main className="read-col">
     <h1>今天麦什么</h1>
-    <p>连接自己的麦当劳账号，摇出龙腾大道店的真实餐点。</p>
+    <p>连接自己的麦当劳账号，摇出今天的真实餐点。</p>
     {error && <p className="notice" role="alert">{error}</p>}
     {!bootstrap ? <p>正在连接本机服务。连接失败时请刷新页面。</p> :
       <form onSubmit={async event => {

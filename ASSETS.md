@@ -15,6 +15,8 @@
 
 `docs/images/github-cover.png`和`social-preview.png`是Codex用现有薯条素材与排版合成的介绍图。`responsive-design.png`是静态界面示意，不能作为功能或浏览器测试证据。图中的¥37.50注明历史示例，实际价格须重新查询。
 
+`docs/images/live-fortune-result.png` 与 `live-cart-repriced.png` 为华旭国际大厦餐厅真实网页验收的原始截图，分别展示出签报价及确认加购后的重新核价。按用户要求加入仓库介绍，未改动截图内容；仅含公开店址、餐品、当次价格与应用界面，不包含 Token、个人资料或订单信息。它们属于真实运行记录，不能与上面的设计稿混称。
+
 ## 权利与公开范围
 
 新增参考：`reference/art/loading-ring-reference.png`为用户2026-10-09提供的1024×1024 RGB角色/食物圆环，原样保存，校验记录在同目录JSON。用户明确“仅作参考”；不是已批准的生产素材，未抠图、未生成动图、未实现旋转。设计用法见DESIGN的查询Loading章节，不能从参考状态推断额外使用授权。

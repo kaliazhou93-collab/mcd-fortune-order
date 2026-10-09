@@ -1,11 +1,12 @@
 import { createHash, randomUUID } from "node:crypto";
 import { connectReadOnly, quoteSummary } from "../scripts/mcp-core.mjs";
 import { LiveError, validatePreference, parseNutrition, configureMeal, menuCodes } from "./catalog.mjs";
+import { LIVE_STORE } from "./store.mjs";
 
-export const STORE_CODE = "1450398";
+export const STORE_CODE = LIVE_STORE.storeCode;
 export const initialLiveContext = {
-  mode: "live", storeCode: STORE_CODE, storeName: "麦当劳上海龙腾大道餐厅",
-  storeAddress: "龙腾大道2121号巨无霸魔方1F2F", beType: 1, orderType: 1, revision: 0,
+  mode: "live", storeCode: STORE_CODE, storeName: LIVE_STORE.storeName,
+  storeAddress: LIVE_STORE.storeAddress, beType: 1, orderType: 1, revision: 0,
 };
 const officialContext = { storeCode: STORE_CODE, orderType: 1, beType: 1 };
 const hash = value => createHash("sha256").update(JSON.stringify(value)).digest("hex");
@@ -56,15 +57,15 @@ export class LiveSession {
 
   async checkStore() {
     const stores = await this.call("query-nearby-stores", {
-      beType: 1, searchType: 2, city: "上海", keyword: "龙腾大道",
+      beType: 1, searchType: 2, city: LIVE_STORE.city, keyword: LIVE_STORE.keyword,
     });
     const store = Array.isArray(stores) && stores.find(s => String(s.storeCode) === STORE_CODE);
-    if (!store) throw new LiveError("STORE_NOT_FOUND", "没有找到上海龙腾大道餐厅，请稍后重试。");
+    if (!store) throw new LiveError("STORE_NOT_FOUND", `没有找到${LIVE_STORE.storeName}，请稍后重试。`);
     this.context = { ...this.context, storeName: store.storeName, storeAddress: store.address };
     if (store.businessStatus !== true) {
       const hours = store.businessStartTime && store.businessEndTime
         ? `营业时间 ${store.businessStartTime}–${store.businessEndTime}。` : "";
-      throw new LiveError("STORE_CLOSED", `龙腾大道店现在休息，${hours}营业后再来摇一份吧。`, 409);
+      throw new LiveError("STORE_CLOSED", `${store.storeName}现在休息，${hours}营业后再来摇一份吧。`, 409);
     }
     return store;
   }
@@ -126,7 +127,7 @@ export class LiveSession {
             key, value, source: "official-menu/project-name-rules", checkedAt: now,
           })),
           reasons: [
-            "来自龙腾大道店本次返回的菜单，已按完整配置重新核价。",
+            `来自${this.context.storeName}本次返回的菜单，已按完整配置重新核价。`,
             ...(preference.exclusions.length ? ["按已识别餐品名称筛选口味；这不是过敏原保证。"] : []),
             ...(configured.nutrition ? [
               `按官方营养表匹配估算：整份约 ${Math.round(configured.nutrition.kcal)} 千卡，蛋白质 ${Math.round(configured.nutrition.protein)} 克。`,

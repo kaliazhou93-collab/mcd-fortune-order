@@ -81,7 +81,7 @@ export function HomePage({ store }: { store: AppStore }) {
             <div className="price-meta">{context.storeAddress}</div>
           </div>
           <p className="disabled-note">
-            {store.adapterKind === "live" ? "本次使用上海龙腾大道餐厅，抽签前会检查营业状态和当前菜单。" : "演示模式使用历史示例；真实查询请运行本机入口。"}
+            {store.adapterKind === "live" ? "抽签前会检查这家门店的营业状态和当前菜单。" : "演示模式使用历史示例；真实查询请运行本机入口。"}
           </p>
         </div>
 

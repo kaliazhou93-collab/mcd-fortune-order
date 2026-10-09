@@ -1,3 +1,4 @@
+import { LIVE_STORE } from "../../server/store.mjs";
 // Contract fixture, never a production fallback. No real account, menu or prices.
 export function fakeMcp() {
   const state = { open: true, price: 2800, failPrice: false, calls: [] };
@@ -29,7 +30,7 @@ export function fakeMcp() {
     async call(name, args) {
       state.calls.push({ name, args: structuredClone(args) });
       if (name === "query-nearby-stores") return [{
-        storeCode: "1450398", storeName: "麦当劳上海龙腾大道餐厅", address: "龙腾大道2121号",
+        storeCode: LIVE_STORE.storeCode, storeName: LIVE_STORE.storeName, address: LIVE_STORE.storeAddress,
         businessStatus: state.open, businessStartTime: "07:00", businessEndTime: "22:00",
       }];
       if (name === "query-meals") return { meals: Object.fromEntries(Object.entries(details)
