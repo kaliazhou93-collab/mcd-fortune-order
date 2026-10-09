@@ -1,0 +1,40 @@
+{
+  "name": "mcd-fortune-order",
+  "version": "0.1.0",
+  "private": true,
+  "description": "今天麦什么 — 薯条签筒抽签选餐的响应式网页演示（M1 demo）",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "mcp:draw": "node scripts/mcp-draw.mjs",
+    "mcp:check": "node scripts/mcp-draw.mjs --check",
+    "test:mcp": "node --test tests/mcp-core.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.47.2",
+    "@testing-library/jest-dom": "6.5.0",
+    "@testing-library/react": "16.0.1",
+    "@types/node": "22.20.5",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "4.3.2",
+    "jsdom": "25.0.1",
+    "typescript": "5.6.2",
+    "vite": "5.4.8",
+    "vitest": "2.1.2"
+  }
+}

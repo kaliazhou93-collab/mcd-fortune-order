@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.runtime/
+.handoff/
+.kiro/agents/
+playwright-report/
+test-results/
+*.log
+*.tmp
+.DS_Store
