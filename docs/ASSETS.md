@@ -13,7 +13,9 @@
 
 薯条处理仅去背景、保留原画形状与金色M；边缘有抗锯齿半透明像素。店铺文字是画面一部分，用户流程文字另由HTML实现。不新增生成图，不要求用户为每条签单独画场景。
 
-`docs/images/github-cover.png`和`social-preview.png`是Codex用现有薯条素材与排版合成的介绍图。`responsive-design.png`是静态界面示意，不能作为功能或浏览器测试证据。图中的¥37.50注明历史示例，实际价格须重新查询。
+`docs/images/github-cover.png`和`social-preview.png`是Codex用现有薯条素材与排版合成的介绍图。`responsive-design.png`是静态界面示意，不能作为功能或浏览器测试证据。图中的¥37.50注明历史示例；该设计稿已从README展示中移除，仅保留设计归档。
+
+`docs/images/live-desktop-result.png`、`live-fortune-result.png` 与 `live-cart-repriced.png` 为华旭国际大厦餐厅真实网页验收的原始截图，分别展示电脑出签、手机出签及确认加购后的重新核价。按用户要求加入仓库介绍，未改动截图内容；仅含公开店址、餐品、当次价格与应用界面，不包含 Token、个人资料或订单信息。它们属于真实运行记录，不能与上面的设计稿混称。
 
 ## 权利与公开范围
 
