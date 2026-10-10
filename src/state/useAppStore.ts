@@ -37,6 +37,9 @@ export interface AppStore {
   prepareError: PrepareError | null;
   announcement: string;
   adapterKind: MenuAdapter["kind"];
+  cartBusy: boolean;
+  cartError: string | null;
+  refreshCart(): Promise<void>;
 
   setMood(mood: Mood): void;
   toggleExclusion(ex: Exclusion): void;
@@ -77,14 +80,18 @@ function initialContext(): Context {
 }
 
 export function useAppStore(adapter: MenuAdapter, options: StoreOptions = {}): AppStore {
-  const [context] = useState<Context>(initialContext);
+  const [context] = useState<Context>(() => adapter.initialContext ?? initialContext());
   const [preference, setPreference] = useState<Preference>({
     mood: "treat",
     exclusions: [],
     revision: 0,
   });
   const [screen, setScreen] = useState<Screen>("home");
-  const [cart, setCart] = useState<Cart>(() => createEmptyCart(context));
+  const [cart, setCart] = useState<Cart>(() => adapter.initialCart ?? createEmptyCart(context));
+  const [cartBusy, setCartBusy] = useState(false);
+  const [cartError, setCartError] = useState<string | null>(null);
+  const operationBusy = useRef(false);
+  const pendingAdd = useRef<{ candidateId: string; actionId: string } | null>(null);
   const [current, setCurrent] = useState<AppStore["current"]>(null);
   const [prepareError, setPrepareError] = useState<PrepareError | null>(null);
   const [announcement, setAnnouncement] = useState("");
@@ -140,10 +147,11 @@ export function useAppStore(adapter: MenuAdapter, options: StoreOptions = {}): A
 
       let candidates: Candidate[];
       try {
-        candidates = await adapter.getCandidates(context);
-      } catch {
+        candidates = await adapter.getCandidates(context, preference);
+      } catch (error) {
         if (token !== drawToken.current) return;
-        setPrepareError({ kind: "pricing", message: "价格还没确认好，请重试或返回。" });
+        setPrepareError({ kind: "pricing", message: adapter.kind === "live" && error instanceof Error
+          ? error.message : "价格还没确认好，请重试或返回。" });
         setScreen("home");
         return;
       }
@@ -174,7 +182,14 @@ export function useAppStore(adapter: MenuAdapter, options: StoreOptions = {}): A
         return;
       }
 
-      const fortunes = await adapter.getFortunes();
+      let fortunes: Fortune[];
+      try { fortunes = await adapter.getFortunes(); }
+      catch {
+        if (token !== drawToken.current) return;
+        setPrepareError({ kind: "pricing", message: "签文暂时没加载好，请重试。" });
+        setScreen("home");
+        return;
+      }
       if (token !== drawToken.current) return;
       const picked = pickFortune(fortunes, fortuneHistory.current, fortuneRng, {
         forceGrade: options.forceGrade,
@@ -182,6 +197,7 @@ export function useAppStore(adapter: MenuAdapter, options: StoreOptions = {}): A
       fortuneHistory.current = picked.history;
 
       setCurrent({ candidate, fortune: picked.fortune });
+      setCartError(null);
       setScreen("stage");
       setAnnouncement("");
     },
@@ -206,10 +222,43 @@ export function useAppStore(adapter: MenuAdapter, options: StoreOptions = {}): A
     setPrepareError(null);
   }, []);
 
-  const openCart = useCallback(() => setScreen("cart"), []);
+  const liveOperation = useCallback(async (work: () => Promise<Cart>, added = false) => {
+    if (operationBusy.current) return;
+    operationBusy.current = true;
+    setCartBusy(true);
+    setCartError(null);
+    try {
+      setCart(await work());
+      if (added) {
+        pendingAdd.current = null;
+        setScreen("cart");
+        setAnnouncement("已按门店实价加入本应用购物车，尚未下单");
+      }
+    } catch (error) {
+      setCartError(error instanceof Error ? error.message : "核价失败，请重试。");
+      setCart(c => ({ ...c, status: "needs_refresh" }));
+      try { if (adapter.liveCart) setCart(await adapter.liveCart.read()); } catch { /* Keep previous cart. */ }
+    } finally {
+      operationBusy.current = false;
+      setCartBusy(false);
+    }
+  }, [adapter]);
+
+  const openCart = useCallback(() => {
+    setScreen("cart");
+    if (adapter.liveCart) void liveOperation(() => adapter.liveCart!.read());
+  }, [adapter, liveOperation]);
 
   const confirmAdd = useCallback(() => {
     const cur = currentRef.current;
+    if (adapter.liveCart && cur) {
+      if (!pendingAdd.current || pendingAdd.current.candidateId !== cur.candidate.id) {
+        pendingAdd.current = { candidateId: cur.candidate.id, actionId: crypto.randomUUID() };
+      }
+      const action = pendingAdd.current;
+      void liveOperation(() => adapter.liveCart!.add(action.candidateId, action.actionId, cart.version), true);
+      return;
+    }
     if (cur) {
       const actionId = `add-${cur.candidate.id}-${lastAddNonce.current}`;
       lastAddNonce.current += 1;
@@ -218,17 +267,28 @@ export function useAppStore(adapter: MenuAdapter, options: StoreOptions = {}): A
     }
     setAnnouncement("已加入待购清单");
     setScreen("cart");
-  }, []);
+  }, [adapter, cart.version, liveOperation]);
 
   const changeLineQuantity = useCallback((lineKey: string, qty: number) => {
+    if (adapter.liveCart) {
+      void liveOperation(() => adapter.liveCart!.change(lineKey, qty, cart.version));
+      return;
+    }
     setCart((c) => changeQuantity(c, lineKey, qty));
-  }, []);
+  }, [adapter, cart.version, liveOperation]);
 
   const removeCartLine = useCallback((lineKey: string) => {
+    if (adapter.liveCart) {
+      void liveOperation(() => adapter.liveCart!.change(lineKey, 0, cart.version));
+      return;
+    }
     setCart((c) => removeLine(c, lineKey));
-  }, []);
+  }, [adapter, cart.version, liveOperation]);
 
-  const openConfirm = useCallback(() => setScreen("confirm"), []);
+  const refreshCart = useCallback(async () => {
+    if (adapter.liveCart) await liveOperation(() => adapter.liveCart!.refresh(cart.version));
+  }, [adapter, cart.version, liveOperation]);
+  const openConfirm = useCallback(() => setScreen(adapter.kind === "live" ? "cart" : "confirm"), [adapter.kind]);
   const backToResult = useCallback(
     () => setScreen(current ? "result" : "home"),
     [current],
@@ -243,6 +303,9 @@ export function useAppStore(adapter: MenuAdapter, options: StoreOptions = {}): A
     prepareError,
     announcement,
     adapterKind: adapter.kind,
+    cartBusy,
+    cartError,
+    refreshCart,
     setMood,
     toggleExclusion,
     canDraw,

@@ -10,6 +10,10 @@
 
 选好口味，摇出今天的餐点和一句签文。喜欢就加入购物车，不喜欢就换一份。
 
+适合午餐选择困难、想换个口味，或想给吃饭加一点仪式感的人。
+
+[在线演示](https://kaliazhou93-collab.github.io/mcd-fortune-order/) · [参赛报名（官方已确认）](https://github.com/M-China/mcd-developer-innovation-challenge/issues/161)
+
 > **真实网页链路已验证**：用自己的 MCP Token 查菜单、核价、抽签，再加入应用购物车。已在上海华旭国际大厦餐厅完成真实查询、加购、改量核价和刷新恢复。GitHub Pages 保留免登录演示。
 
 ## 怎么玩
@@ -20,11 +24,11 @@
 
 ## 真实场景
 
-在上海华旭国际大厦餐厅的真实验证：摇到「龙焰鸡腿堡三件套」**¥26.90**，点击「就吃这份」后，MCP 再次核价并加入应用购物车。
+在上海华旭国际大厦餐厅的真实验证：摇到「龙焰芝士棒鸡腿堡三件套」**¥29.90**，点击「就吃这份」后，MCP 再次核价并加入应用购物车。
 
 | ① 摇出餐点与签文 | ② 确认加购，再次核价 |
 |---|---|
-| <img src="docs/images/live-fortune-result.png" alt="真实网页出签：超级大吉，龙焰鸡腿堡三件套，当次报价26.90元" width="300" /> | <img src="docs/images/live-cart-repriced.png" alt="真实应用购物车：华旭国际大厦餐厅，确认加购后重新核价26.90元，尚未下单" width="300" /> |
+| <img src="docs/images/live-fortune-result.png" alt="真实网页出签：大吉，龙焰芝士棒鸡腿堡三件套，当次报价29.90元" width="300" /> | <img src="docs/images/live-cart-repriced.png" alt="真实应用购物车：华旭国际大厦餐厅，确认加购后重新核价29.90元，尚未下单" width="300" /> |
 
 以上为实际运行截图，价格仅代表当次查询；**未创建订单、未付款**。[查看验证记录](docs/VALIDATION.md)。
 
@@ -43,9 +47,9 @@
 | ![金色庆祝场景](public/art/shop-celebration.png) | ![温柔陪伴场景](public/art/shop-comfort.png) |
 
 <details>
-<summary>查看手机与电脑的界面设计稿</summary>
+<summary>查看电脑端真实截图（与上方手机端为同一次抽签）</summary>
 
-<img src="docs/images/responsive-design.png" alt="手机与电脑界面设计稿，非运行截图" width="100%" />
+<img src="docs/images/live-desktop-result.png" alt="华旭门店真实电脑端出签：大吉，龙焰芝士棒鸡腿堡三件套29.90元" width="100%" />
 
 </details>
 

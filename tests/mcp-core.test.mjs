@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { unwrap, defaultMeal, quoteSummary } from "../scripts/mcp-core.mjs";
 import { drawLive } from "../scripts/mcp-draw.mjs";
+import { LIVE_STORE } from "../server/store.mjs";
 
 test("protocol and business failures cannot become a successful meal", () => {
   assert.throws(() => unwrap({ isError: true }));
@@ -30,7 +31,7 @@ test("invalid defaults and absent amounts fail closed", () => {
 test("closed store stops without any menu, quote or order call", async () => {
   const calls = [];
   const output = await drawLive({ async call(name) {
-    calls.push(name); return [{ storeCode: "1450398", storeName: "测试店", businessStatus: false }];
+    calls.push(name); return [{ storeCode: LIVE_STORE.storeCode, storeName: "测试店", businessStatus: false }];
   } });
   assert.equal(output.status, "store-unavailable");
   assert.deepEqual(calls, ["query-nearby-stores"]);
@@ -40,7 +41,7 @@ test("successful live workflow only exposes the fresh quote and a fortune", asyn
   const calls = [];
   const output = await drawLive({ async call(name) {
     calls.push(name);
-    if (name === "query-nearby-stores") return [{ storeCode: "1450398", storeName: "测试店", businessStatus: true }];
+    if (name === "query-nearby-stores") return [{ storeCode: LIVE_STORE.storeCode, storeName: "测试店", businessStatus: true }];
     if (name === "query-meals") return { meals: { "9900005466": { canWithOrder: false } } };
     if (name === "query-meal-detail") return { code: "9900005466", name: "测试套餐", rounds: [
       { id: 1, minQuantity: 1, maxQuantity: 1, choices: [{ code: "1100", name: "测试主餐", quantity: 1, maxQuantity: 1 }] },
@@ -55,7 +56,7 @@ test("successful live workflow only exposes the fresh quote and a fortune", asyn
 });
 test("quote failure never falls back to historical prices", async () => {
   await assert.rejects(() => drawLive({ async call(name) {
-    if (name === "query-nearby-stores") return [{ storeCode: "1450398", businessStatus: true }];
+    if (name === "query-nearby-stores") return [{ storeCode: LIVE_STORE.storeCode, businessStatus: true }];
     if (name === "query-meals") return { meals: { "9900005466": {} } };
     throw new Error("failed");
   } }), /没有成功核价/);

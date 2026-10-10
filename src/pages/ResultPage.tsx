@@ -97,7 +97,7 @@ export function ResultPage({ store }: { store: AppStore }) {
         )}
 
         <div className="price-big" aria-live="polite">
-          本次应付 {formatFen(quote.payableInFen)}
+          {store.adapterKind === "live" ? "当前报价" : "本次应付"} {formatFen(quote.payableInFen)}
         </div>
         {hasDiscount && (
           <div className="price-meta">
@@ -106,8 +106,11 @@ export function ResultPage({ store }: { store: AppStore }) {
           </div>
         )}
         <div className="price-meta">
-          示例报价 · {formatCheckedAt(quote.calculatedAt)} 核价（历史示例，非今日价格承诺）
+          {store.adapterKind === "live"
+            ? `门店实价 · ${formatCheckedAt(quote.calculatedAt)} 核价，加入清单时再次确认价格`
+            : `示例报价 · ${formatCheckedAt(quote.calculatedAt)} 核价（历史示例，非今日价格承诺）`}
         </div>
+        {store.cartError && <p className="notice" role="alert">{store.cartError}</p>}
 
         <div className="actions">
           <button
@@ -115,18 +118,20 @@ export function ResultPage({ store }: { store: AppStore }) {
             className="btn btn-primary"
             onClick={store.confirmAdd}
             data-testid="eat-this"
+            disabled={store.cartBusy}
           >
-            就吃这份
+            {store.cartBusy ? "正在核价并加入…" : "就吃这份"}
           </button>
           <button
             type="button"
             className="btn btn-secondary"
             onClick={() => void store.reroll()}
             data-testid="reroll"
+            disabled={store.cartBusy}
           >
             换个口味
           </button>
-          <button type="button" className="btn btn-text" onClick={store.goHome}>
+          <button type="button" className="btn btn-text" onClick={store.goHome} disabled={store.cartBusy}>
             修改条件
           </button>
         </div>

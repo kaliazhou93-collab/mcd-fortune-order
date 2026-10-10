@@ -3,18 +3,19 @@ import { randomInt } from "node:crypto";
 import { pathToFileURL } from "node:url";
 import { resolve } from "node:path";
 import { connectReadOnly, defaultMeal, quoteSummary } from "./mcp-core.mjs";
+import { LIVE_STORE } from "../server/store.mjs";
 
 // A runnable companion for genuine read-only MCP use. No server, browser token or checkout.
-const STORE = "1450398";
+const STORE = LIVE_STORE.storeCode;
 const SUPPORTED_MEALS = ["9900005466", "9900011128"];
 
 export async function drawLive(api) {
   const stores = await api.call("query-nearby-stores", {
-    beType: 1, searchType: 2, city: "上海", keyword: "龙腾大道",
+    beType: 1, searchType: 2, city: LIVE_STORE.city, keyword: LIVE_STORE.keyword,
   });
   if (!Array.isArray(stores)) throw new Error("门店返回格式无法确认。");
   const store = stores.find(s => String(s.storeCode) === STORE);
-  if (!store) throw new Error("没有找到上海龙腾大道示例门店，请稍后再试。");
+  if (!store) throw new Error(`没有找到${LIVE_STORE.storeName}，请稍后再试。`);
   if (store.businessStatus !== true)
     return { mode: "live", status: "store-unavailable", store: store.storeName,
       checkedAt: new Date().toISOString(), message: "门店当前未营业，未生成可购买推荐。", ordersCreated: 0 };
@@ -45,7 +46,7 @@ export async function drawLive(api) {
 
 async function main() {
   if (process.argv.includes("--help")) {
-    console.log("npm run mcp:draw：从本机MCD_MCP_TOKEN连接官方服务，查询龙腾大道门店、支持套餐和实际报价后抽签。仅查询，不建单。\nnpm run mcp:check：查询官方营养表，验证MCP连接。不输出账户资料。");
+    console.log(`npm run mcp:draw：从本机MCD_MCP_TOKEN连接官方服务，查询${LIVE_STORE.storeName}、支持套餐和实际报价后抽签。仅查询，不建单。\nnpm run mcp:check：查询官方营养表，验证MCP连接。不输出账户资料。`);
     return;
   }
   let api;
